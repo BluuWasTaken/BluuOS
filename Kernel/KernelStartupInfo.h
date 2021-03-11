@@ -5,10 +5,12 @@
 struct MemoryMap
 {
 	UINTN MemoryMapSize;
-	EFI_MEMORY_DESCRIPTOR MemoryMap[4];
+	EFI_MEMORY_DESCRIPTOR* MemoryMap;
 	UINTN MapKey;
 	UINTN DescriptorSize;
 	UINT32 DescriptorVersion;
+
+	int MemMapLen;
 };
 
 struct KernelStartupInfo 

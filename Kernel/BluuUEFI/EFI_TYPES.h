@@ -1,12 +1,12 @@
-
 #pragma once
 #define EFIERR(a)           (0x80000000 | a)
 #define EFI_SUCCESS 0
-#define EFI_LOAD_ERROR EFIERR(1)
-#define EFI_INVALID_PARAMETER EFIERR(2)
-#define EFI_UNSUPPORTED EFIERR(3)
-#define EFI_NOT_READY EFIERR(6)
-#define EFI_NOT_FOUND EFIERR(14)
+#define EFI_LOAD_ERROR EFIERR 1
+#define EFI_INVALID_PARAMETER 2
+#define EFI_UNSUPPORTED 3
+#define EFI_BUFFER_TOO_SMALL 5
+#define EFI_NOT_READY 6
+#define EFI_NOT_FOUND 14
 
 //Basic Types
 #define BOOLEAN unsigned char
@@ -16,8 +16,8 @@
 #define UINT8 unsigned char
 #define INT16 short
 #define UINT16 unsigned short
-#define INT32 long
-#define UINT32 unsigned long
+#define INT32 int
+#define UINT32 unsigned int
 #define INT64 long long int
 #define UINT64 unsigned long long int
 #define INT128 __int128

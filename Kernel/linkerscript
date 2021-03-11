@@ -1,0 +1,11 @@
+ENTRY(UefiMain)
+phys = 0x00100000;
+SECTIONS
+{
+  .text phys : AT(phys) {
+    code = .;
+    *(.text)
+	*(.rdata*)
+    . = ALIGN(4096);
+  }
+}
