@@ -22,3 +22,4 @@ clean:
 	rm -rf *.so
 run:
 	uefi-run main.efi
+	rm -rf main.efi
