@@ -1,4 +1,4 @@
-#include "../BluuUEFI/EFI_TYPES.h"
+#include "../../BluuUEFI/EFI_TYPES.h"
 #include "../KernelStartupInfo.h"
 
 typedef struct
