@@ -26,7 +26,8 @@
 #define CHAR16 UINT16
 #define VOID void
 #define CONST const
-#define EFIAPI __cdecl
+#define cdecl
+#define EFIAPI cdecl
 
 //These are null to make it easier to c/p function prototypes
 #define IN
@@ -49,22 +50,22 @@ typedef struct _EFI_GUID
 //
 
 //Networking
-struct EFI_MAC_ADDRESS 
+struct EFI_MAC_ADDRESS
 {
 	CHAR8 Addr[32];
 }__attribute__((packed));
 
-struct EFI_IPv4_ADDRESS 
+struct EFI_IPv4_ADDRESS
 {
 	CHAR8 Addr[4];
 }__attribute__((packed));
 
-struct EFI_IPv6_ADDRESS 
+struct EFI_IPv6_ADDRESS
 {
 	CHAR8 Addr[16];
 }__attribute__((packed));
 
-struct EFI_IP_ADDRESS 
+struct EFI_IP_ADDRESS
 {
 	CHAR8 One[4];
 	CHAR8 Two[4];
@@ -92,41 +93,41 @@ struct EFI_IP_ADDRESS
 typedef UINT64 EFI_PHYSICAL_ADDRESS;
 typedef UINT64 EFI_VIRTUAL_ADDRESS;
 
-typedef enum 
+typedef enum
 {
-	EfiReservedMemoryType, 
-	EfiLoaderCode, 
-	EfiLoaderData, 
-	EfiBootServicesCode, 
-	EfiBootServicesData, 
-	EfiRuntimeServicesCode, 
-	EfiRuntimeServicesData, 
-	EfiConventionalMemory, 
-	EfiUnusableMemory, 
-	EfiACPIReclaimMemory, 
-	EfiACPIMemoryNVS, 
-	EfiMemoryMappedIO, 
-	EfiMemoryMappedIOPortSpace, 
-	EfiPalCode, 
-	EfiPersistentMemory, 
+	EfiReservedMemoryType,
+	EfiLoaderCode,
+	EfiLoaderData,
+	EfiBootServicesCode,
+	EfiBootServicesData,
+	EfiRuntimeServicesCode,
+	EfiRuntimeServicesData,
+	EfiConventionalMemory,
+	EfiUnusableMemory,
+	EfiACPIReclaimMemory,
+	EfiACPIMemoryNVS,
+	EfiMemoryMappedIO,
+	EfiMemoryMappedIOPortSpace,
+	EfiPalCode,
+	EfiPersistentMemory,
 	EfiMaxMemoryType
 } EFI_MEMORY_TYPE;
 
-typedef enum 
-{ 
+typedef enum
+{
 	AllocateAnyPages,
 	AllocateMaxAddress,
 	AllocateAddress,
 	MaxAllocateType
 } EFI_ALLOCATE_TYPE;
 
-typedef struct 
-{ 
-	UINT32 Type; 
-	EFI_PHYSICAL_ADDRESS   PhysicalStart; 
-	EFI_VIRTUAL_ADDRESS	   VirtualStart; 
-	UINT64                 NumberOfPages; 
-	UINT64                 Attribute; 
+typedef struct
+{
+	UINT32 Type;
+	EFI_PHYSICAL_ADDRESS   PhysicalStart;
+	EFI_VIRTUAL_ADDRESS	   VirtualStart;
+	UINT64                 NumberOfPages;
+	UINT64                 Attribute;
 } EFI_MEMORY_DESCRIPTOR;
 
 
@@ -155,26 +156,26 @@ typedef struct _EFI_DEVICE_PATH_PROTOCOL { UINT8 Type; UINT8 SubType; UINT8 Leng
 //Time
 typedef enum { TimerCancel, TimerPeriodic, TimerRelative } EFI_TIMER_DELAY;
 
-typedef struct 
+typedef struct
 {
-	UINT16   Year;              // 1900 – 9999 
-	UINT8   Month;              // 1 – 12 
-	UINT8   Day;                // 1 – 31 
-	UINT8   Hour;               // 0 – 23 
-	UINT8   Minute;             // 0 – 59 
-	UINT8   Second;             // 0 – 59 
-	UINT8   Pad1; 
-	UINT32   Nanosecond;  // 0 – 999,999,999 
-	INT16   TimeZone;           // -1440 to 1440 or 2047 
-	UINT8   Daylight; 
+	UINT16   Year;              // 1900 ï¿½ 9999
+	UINT8   Month;              // 1 ï¿½ 12
+	UINT8   Day;                // 1 ï¿½ 31
+	UINT8   Hour;               // 0 ï¿½ 23
+	UINT8   Minute;             // 0 ï¿½ 59
+	UINT8   Second;             // 0 ï¿½ 59
+	UINT8   Pad1;
+	UINT32   Nanosecond;  // 0 ï¿½ 999,999,999
+	INT16   TimeZone;           // -1440 to 1440 or 2047
+	UINT8   Daylight;
 	UINT8   Pad2;
 } EFI_TIME;
 
-typedef struct 
-{ 
-	UINT32   Resolution; 
-	UINT32   Accuracy; 
-	BOOLEAN  SetsToZero; 
+typedef struct
+{
+	UINT32   Resolution;
+	UINT32   Accuracy;
+	BOOLEAN  SetsToZero;
 } EFI_TIME_CAPABILITIES;
 
 //idk

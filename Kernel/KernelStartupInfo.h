@@ -1,6 +1,7 @@
 #pragma once
 #include "BluuUEFI/EFI_TYPES.h"
 #include "BluuUEFI/EFI_GRAPHICS_OUTPUT_PROTOCOL.h"
+#include "BluuUEFI/EFI_RUNTIME_SERVICES.h"
 
 struct MemoryMap
 {
@@ -15,6 +16,7 @@ struct MemoryMap
 
 struct KernelStartupInfo 
 {
-	struct MemoryMap MemMap;
-	EFI_GRAPHICS_OUTPUT_PROTOCOL* Graphics;
+	struct MemoryMap Map;
+	EFI_GRAPHICS_OUTPUT_PROTOCOL* GOP;
+	EFI_RUNTIME_SERVICES* RuntimeServices;
 };

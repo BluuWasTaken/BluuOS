@@ -44,12 +44,12 @@ typedef EFI_STATUS(EFIAPI* EFI_TEXT_SET_CURSOR_POSITION) (IN struct _EFI_SIMPLE_
 typedef EFI_STATUS(EFIAPI* EFI_TEXT_ENABLE_CURSOR) (IN struct _EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL* This, IN BOOLEAN                         Visible);
 
 typedef struct {
-	INT32               MaxMode; 
-	// current settings  
-	INT32               Mode; 
-	INT32               Attribute; 
-	INT32               CursorColumn; 
-	INT32               CursorRow; 
+	INT32               MaxMode;
+	// current settings
+	INT32               Mode;
+	INT32               Attribute;
+	INT32               CursorColumn;
+	INT32               CursorRow;
 	BOOLEAN             CursorVisible;
 } SIMPLE_TEXT_OUTPUT_MODE;
 

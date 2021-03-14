@@ -1,0 +1,12 @@
+ENTRY(UefiMain)
+KERNEL_VMA = 0xC0000000;
+
+SECTIONS
+{
+. = KERNEL_VMA;
+.rdata :
+  {
+    . = ALIGN(4096);
+    *(.rdata)
+  }
+}

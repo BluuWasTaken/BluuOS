@@ -13,5 +13,6 @@ typedef struct
 	int Size;
 } MemoryBlock;
 
-void mem_init(struct MemoryMap map);
+void memset(char value, void* destination, int size);
+void mem_init(EFI_MEMORY_DESCRIPTOR* descriptors, int len, EFI_RUNTIME_SERVICES* RuntimeServices);
 void* kmalloc(int size);

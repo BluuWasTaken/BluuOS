@@ -33,9 +33,9 @@ typedef struct
 
 typedef struct 
 { 
-	UINT8  Blue; 
-	UINT8  Green; 
-	UINT8  Red; 
+	UINT8  Blue;
+	UINT8  Green;
+	UINT8  Red;
 	UINT8  Reserved; 
 } EFI_GRAPHICS_OUTPUT_BLT_PIXEL;
 
