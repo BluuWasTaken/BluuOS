@@ -1,7 +1,6 @@
 #include "../BluuUEFI/EFI_SYSTEM_TABLE.h"
 #include "../BluuUEFI/EFI_GRAPHICS_OUTPUT_PROTOCOL.h"
 #include "../Kernel/KernelStartupInfo.h"
-#include "Paging.h"
 
 EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE* ST)
 {
@@ -45,9 +44,5 @@ EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE* ST)
 		}
 	}
 
-	ST->BootServices->ExitBootServices(ImageHandle, MemMap.MapKey);
-
-	load_page_directory(page_directory);
-	enable_paging();
 	return EFI_SUCCESS;
 }
